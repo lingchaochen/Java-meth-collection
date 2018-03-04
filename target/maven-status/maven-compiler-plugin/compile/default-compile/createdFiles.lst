@@ -1,4 +1,6 @@
 HelpMojo.class
 collect/java_api/MyMojo.class
+collect/java_api/Collectmeth_method_level.class
+collect/java_api/newMethodVisitor.class
 collect/java_api/Collectmeth.class
 collect/java_api/FileSearch.class

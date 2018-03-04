@@ -24,6 +24,7 @@ import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 import org.apache.maven.plugins.annotations.ResolutionScope;
 import org.objectweb.asm.ClassReader;
+import collect.java_api.Collectmeth;
 
 import java.io.BufferedWriter;
 import java.io.EOFException;
@@ -42,6 +43,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Goal which touches a timestamp file.
@@ -49,7 +52,7 @@ import java.util.Map.Entry;
  * @deprecated Don't use!
  */
 
-@Mojo(name = "collect")
+@Mojo(name = "collect_class")
 public class MyMojo extends AbstractMojo {
 	
 	static String baseDIR = System.getProperty("user.dir");
@@ -66,6 +69,16 @@ public class MyMojo extends AbstractMojo {
            }
     
     public void get_Classes() throws Exception {
+    	
+    	String test="()Lorg/testng/annotations/Test;";
+    	String regex = "(L)(.*)";
+    	Pattern r = Pattern.compile(regex);
+    	Matcher m = r.matcher(test);
+    	if (m.find()) {
+    		System.out.println("Found: "+ m.group(0));
+    	}
+    	
+    	
     	
     	HashSet meth = new HashSet();
         System.out.println(baseDIR);
@@ -85,12 +98,10 @@ public class MyMojo extends AbstractMojo {
             System.out.println("No File Fount.");     
         } else {     
             for (int i = 0; i < resultList.size(); i++) {     
-         		Collectmeth printer = new Collectmeth();
+            	Collectmeth printer = new Collectmeth();
                 String tmp=resultList.get(i).toString();
-//                fos.write(tmp.getBytes());
-//                fos.write("\n".getBytes());
+
                 System.out.println(tmp);
-//                System.out.println(tmp.split("/")[tmp.split("/").length-1]);
                 byte[] buff = null;
             	try (FileInputStream fis = new FileInputStream(tmp)) {
          		buff = new byte [fis.available()];
@@ -103,8 +114,28 @@ public class MyMojo extends AbstractMojo {
              Iterator it = printer.value().iterator();
              List list = new ArrayList(printer.value());
              meth=printer.value();
-
-             System.out.println(printer.value());  
+//             try {
+//            	 System.out.println(printer.mv.test);
+//             }
+//             finally{
+//            	 
+//             }
+//             if (printer.mv != null && printer.mv.Method_meth != null) {
+//            	 Iterator iterator = printer.mv.Method_meth.iterator(); 
+//            	  
+//            	 while (iterator.hasNext()) {  
+//            		 meth.add(iterator.next());         
+//            		}  
+//            	}  
+             
+//       	  
+//        	 while (iterator.hasNext()) {  
+//        		 meth.add(iterator.next());         
+//        		}
+            	 
+            	             
+//             System.out.println(printer.value());  
+             System.out.println(meth);
              m1.put(tmp, meth);
          }
         	}
@@ -114,13 +145,7 @@ public class MyMojo extends AbstractMojo {
     }
     
     public void writeresults(Map m1) throws Exception {
-//    		Map m1 = new HashMap();
-//    		m1.put(classes, meth);
-//    		File file = new File(baseDIR+"/meth_Collect/meth_results.txt"); 
-//    		FileOutputStream fos = new FileOutputStream(file);
-//    		ObjectOutputStream objectOutputStream = new ObjectOutputStream(fos);
-//    		objectOutputStream.writeObject(m1);
-//    		fos.close();
+
     		FileWriter fstream = new FileWriter(baseDIR+"/meth_Collect/meth_results.txt");
     		BufferedWriter out = new BufferedWriter(fstream);
     		Iterator<Entry<String, HashSet>> it = m1.entrySet().iterator();
@@ -130,7 +155,8 @@ public class MyMojo extends AbstractMojo {
     		}
     		out.close();
     }
- 
+    
+    
     
 }
     
