@@ -25,7 +25,7 @@ public class Collectmeth extends ClassVisitor {
      
     @Override
     public void visit(int version, int access, String name, String signature, String superName, String[] interfaces) {
-    	filter(superName);
+//    	filter(superName);
 //    	System.out.println(superName);
 //    	for (int i=0;i<interfaces.length;i++){
 //        	filter(interfaces[i]);
@@ -37,7 +37,7 @@ public class Collectmeth extends ClassVisitor {
     public FieldVisitor visitField(int access, String name, String desc, String signature, Object value) {
 //    	System.out.println(desc);
 
-    	filter(desc);
+//    	filter(desc);
         return null;
     }
      
@@ -51,7 +51,7 @@ public class Collectmeth extends ClassVisitor {
 //    	}
 //    	System.out.println(desc);
 
-    	filter(desc);
+//    	filter(desc);
     	MethodVisitor superMV = super.visitMethod(access, name, desc, signature, exceptions);
 //    	MethodVisitor mv=new newMethodVisitor(superMV, name);
 //    	System.out.println((newMethodVisitor)superMV.test);
@@ -71,7 +71,7 @@ public class Collectmeth extends ClassVisitor {
 	@Override
 	public AnnotationVisitor visitAnnotation(String desc, boolean visible) {
 		// TODO Auto-generated method stub
-		filter(desc);
+//		filter(desc);
 		return null;
 	}
 
