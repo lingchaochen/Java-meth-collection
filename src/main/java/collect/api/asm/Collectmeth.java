@@ -1,4 +1,4 @@
-package collect.java_api;
+package collect.api.asm;
 
 import java.awt.List;
 import java.util.ArrayList;

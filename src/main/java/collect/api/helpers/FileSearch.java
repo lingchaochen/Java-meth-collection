@@ -1,4 +1,4 @@
-package collect.java_api;
+package collect.api.helpers;
 
 import java.io.File;  
 import java.util.ArrayList;  

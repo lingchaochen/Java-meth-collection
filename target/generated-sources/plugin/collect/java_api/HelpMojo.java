@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Display help information on Java_meth_collect.<br>
+ * Display help information on dependency_analysis.<br>
  * Call <code>mvn java_api:help -Ddetail=true -Dgoal=&lt;goal-name&gt;</code> to display parameter details.
  * @author maven-plugin-tools
  */
@@ -59,7 +59,7 @@ public class HelpMojo
 
     // groupId/artifactId/plugin-help.xml
     private static final String PLUGIN_HELP_PATH =
-                    "/META-INF/maven/utd.cs/Java_meth_collect/plugin-help.xml";
+                    "/META-INF/maven/org.selab/dependency_analysis/plugin-help.xml";
 
     private static final int DEFAULT_LINE_LENGTH = 80;
 

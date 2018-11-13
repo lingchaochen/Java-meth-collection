@@ -1,4 +1,4 @@
-package collect.java_api;
+package collect.api.asm;
 
 import java.util.HashSet;
 import java.util.Iterator;

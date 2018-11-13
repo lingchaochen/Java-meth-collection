@@ -1,4 +1,0 @@
-/Users/chenlingchao/test/Java-meth-collection/target/classes/collect/java_api/Collectmeth.class:[java/lang/String, java/util/HashSet]
-/Users/chenlingchao/test/Java-meth-collection/target/classes/collect/java_api/MyMojo.class:[java/util/Map]
-/Users/chenlingchao/test/Java-meth-collection/target/classes/collect/java_api/FileSearch.class:[java/lang/String]
-/Users/chenlingchao/test/Java-meth-collection/target/classes/collect/java_api/HelpMojo.class:[java/lang/StringBuilder, java/lang/String, org/w3c/dom/Document, java/util/, org/w3c/dom/Node]

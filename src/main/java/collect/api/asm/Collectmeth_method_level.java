@@ -1,4 +1,4 @@
-package collect.java_api;
+package collect.api.asm;
 
 import java.util.HashSet;
 
@@ -20,17 +20,11 @@ public class Collectmeth_method_level extends MethodVisitor{
     @Override
     public AnnotationVisitor visitAnnotation(String desc, boolean visible){
     	System.out.println(desc);
-    	    	
 		return null;
  
     }
     
-    
-    
-    
-    
-    
-    
+  
 	@Override
     public void visitEnd() {
         
