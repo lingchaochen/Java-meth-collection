@@ -20,6 +20,7 @@ public class FileSearch {
             System.out.println("文件查找失败：" + baseDirName + "不是一个目录！");  
         }  
         String tempName = null;     
+        System.out.println("test");
         //判断目录是否存在     
         File tempFile;  
         File[] files = baseDir.listFiles();  
